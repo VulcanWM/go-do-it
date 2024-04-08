@@ -5,10 +5,12 @@ const UserSchema = new mongoose.Schema({
   email: String,
   created: Date,
   banned: Schema.Types.Mixed,
-  wins: Number,
-  losses: Number,
-  draws: Number,
-  currency: Number,
+  categories: {String: {
+    points: [Number],
+    streak: Number,
+    compTasks: [String],
+    opTasks: [String]
+  }},
   badges: [String]
 })
 
